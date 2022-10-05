@@ -19,4 +19,41 @@ body {
     font-weight: bold;
     overflow: hidden;
     position: relative;
+    z-index: 1;
+}
+
+.title::before {
+    content: '';
+    animation: animate 2.7s 3.3s linear forwards;
+    background: linear-gradient(90deg, transparent 0%, black 5%, black 100%);
+    position: absolute;
+    left: 120%;
+    height: 100%;
+    width: 120%;
+}
+
+@keyframes animate {
+    0% {
+        left: 110%;
+    }
+
+    100% {
+        left: -20%;
+    }
+}
+
+.title span {
+    color: #ff022c;
+}
+
+video {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    object-fit: cover;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
 }
